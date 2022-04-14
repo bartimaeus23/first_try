@@ -1,4 +1,3 @@
-
 class Catalogue():
     num_list = [11, 12, 23]
     catalogue_list = {
@@ -9,11 +8,11 @@ class Catalogue():
     }
 
 
-
-    def add_to_catalogue(self, user, name, parent_num, num, price):
+    @classmethod
+    def add_to_catalogue(self, user, name, parent_num, num, price, admin_type):
         k = 0
 
-        if not type(user) == Admin:
+        if not type(user) == admin_type:
             k += 1
             raise TypeError
 
@@ -45,13 +44,4 @@ class Catalogue():
     def changing_price(cls, name, current_price):
         Catalogue.catalogue_list[name][2] = current_price
 
-
-# catalogue = Catalogue()
-#
-# catalogue.ceate_subcatalogue('item2')
-# catalogue.add_to_catalogue(adam, 'item4', 1, 33, 1000)
-# catalogue.add_to_catalogue(adam, 'item5', 24, 36, 1500)
-#
-# print(Catalogue.catalogue_list)
-# print(Catalogue.num_list)
 

@@ -1,6 +1,5 @@
-# print(chr(1000))
-# print(ord('r'))
-from Order.py import *
+
+from Order import *
 
 class User():
     __last_id = 0
@@ -31,14 +30,18 @@ class User():
 
 class Admin(User):
     __latest_id = 0
-    def __init(self, name):
+    def __init__(self, name):
         super().__init__(name)
         self.id = Admin.__latest_id
 
 
 user1 = User('Vitya')
 user1.phone = '9890'
-print(user1.phone)
-
+user1.order.create_order(('item2', 2), ('item3', 3), ('banana', 5)) # and how you can see if we order smt that not in the
+                                                                    #catalogue - it's not gonna add it to bucketlist
+user1.bucket.add_order_tohistory(user1.order)
+print(user1.bucket.bucketlist)
 admin1 = Admin('TIKI')
-admin1.phone = '65743'
+admin1.phone = '6574'
+Catalogue.add_to_catalogue(admin1,'clsitem4', 24, 24.8, 500, Admin)
+print(Catalogue.catalogue_list)
