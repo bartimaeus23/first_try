@@ -39,7 +39,7 @@ def get_file(message):
     link = Storage.storage[message.text]
     get(link)  # doesn't work as expected
     # bot.send_message(message.chat.id, )
-    print(link)
+    bot.send_message(message.chat.id, link)
 
 bot.polling(none_stop=True)
 
