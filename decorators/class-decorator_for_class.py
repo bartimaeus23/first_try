@@ -51,3 +51,4 @@ class Foo():
 f = Foo()
 print(f.boo(3, 4))
 print(f.hoo())    # конец удачного использования класс-декоратора Decor(n)  класса Foo
+# fuck it
